@@ -26,7 +26,7 @@
         }
       ],
       "cpu": 0,
-      "memoryReservation": 512,
+      "memoryReservation": 1024,
       "image": "jacobalberty/unifi:5.6.37",
       "essential": true,
       "name": "unifi"
