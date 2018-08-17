@@ -3,3 +3,4 @@
 *.code-workspace
 task.json
 .terraform/
+.DS_Store
