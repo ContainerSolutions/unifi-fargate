@@ -38,11 +38,11 @@
     "environment": [
       {
         "name": "DB_URI",
-        "value": "mongodb://10.100.0.62/unifi"
+        "value": "mongodb://mongo/unifi"
       },
       {
         "name": "STATDB_URI",
-        "value": "mongodb://10.100.0.62/unifi_stat"
+        "value": "mongodb://mongo/unifi_stat"
       },
       {
         "name": "DB_NAME",
