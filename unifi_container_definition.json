@@ -1,0 +1,59 @@
+[
+  {
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/ecs/unifi",
+        "awslogs-region": "${aws_region}",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
+    "portMappings": [
+      {
+        "hostPort": 8080,
+        "protocol": "tcp",
+        "containerPort": 8080
+      },
+      {
+        "hostPort": 8443,
+        "protocol": "tcp",
+        "containerPort": 8443
+      },
+      {
+        "hostPort": 6789,
+        "protocol": "tcp",
+        "containerPort": 6789
+      },
+      {
+        "hostPort": 3478,
+        "protocol": "udp",
+        "containerPort": 3478
+      }
+    ],
+    "cpu": 512,
+    "memoryReservation": 2048,
+    "image": "jacobalberty/unifi:5.6.37",
+    "essential": true,
+    "name": "unifi",
+    "environment": [
+      {
+        "name": "DB_URI",
+        "value": "mongodb://10.100.0.62/unifi"
+      },
+      {
+        "name": "STATDB_URI",
+        "value": "mongodb://10.100.0.62/unifi_stat"
+      },
+      {
+        "name": "DB_NAME",
+        "value": "unifi"
+      }
+    ],
+    "mountPoints": [
+      {
+        "sourceVolume": "unifi",
+        "containerPath": "/unifi"
+      }
+    ]
+  }
+]

@@ -1,6 +1,9 @@
-*.tfvars
-*.plan
 *.code-workspace
+*.backup
+*.plan
+*.tfstate
+*.tfvars
 task.json
 .terraform/
 .DS_Store
+conf/

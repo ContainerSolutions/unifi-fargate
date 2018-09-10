@@ -1,0 +1,24 @@
+[
+  {
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/ecs/unifi",
+        "awslogs-region": "${aws_region}",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
+    "portMappings": [
+      {
+        "hostPort": 27017,
+        "protocol": "tcp",
+        "containerPort": 27017
+      }
+    ],
+    "cpu": 512,
+    "memoryReservation": 2048,
+    "image": "mongo:4.0.1",
+    "essential": true,
+    "name": "mongo"
+  }
+]
